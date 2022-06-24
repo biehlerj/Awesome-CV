@@ -290,6 +290,10 @@
 % Usage: \github{<github-nick>}
 \newcommand*{\github}[1]{\def\@github{#1}}
 
+% Defines writer's Sourcehut (optional)
+% Usage: \srht{<Sourcehut-nick>}
+\newcommand{\srht}[1]{\def\@srht{#1}}
+
 % Defines writer's gitlab (optional)
 % Usage: \gitlab{<gitlab-nick>}
 \newcommand*{\gitlab}[1]{\def\@gitlab{#1}}
@@ -472,13 +476,19 @@
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-				\href{http://\@homepage}{\faHome\acvHeaderIconSep\@homepage}%
+				\href{https://\@homepage}{\faHome\acvHeaderIconSep\@homepage}%
 			}%
 			\ifthenelse{\isundefined{\@github}}%
 			{}%
 			{%
 				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
 				\href{https://github.com/\@github}{\faGithubSquare\acvHeaderIconSep\@github}%
+			}%
+			\ifthenelse{\isundefined{\@srht}}%
+			{}%
+			{%
+				\ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+				\href{https://git.sr.ht/~\@srht}{\faCircleO\acvHeaderIconSep\@srht}%
 			}%
 			\ifthenelse{\isundefined{\@gitlab}}%
 			{}%
