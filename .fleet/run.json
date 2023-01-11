@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "command",
+            "name": "Build Resume",
+            "program": "make",
+            "args": ["resume.pdf"],
+        },
+    ]
+}
